@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+    border: 1px solid black;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.item1,
+.item6 {
+    background-color: antiquewhite;
+}
+
+.item2,
+.item7 {
+    background-color: aqua;
+}
+
+.item3,
+.item8 {
+    background-color: blue;
+}
+
+.item4,
+.item9 {
+    background-color: brown;
+}
+
+.item5,
+.item10 {
+    background-color: cadetblue;
+}
+
+
+.container {
+    display: grid;
+    /* grid-template-columns: 300px 300px 300px 300px; */
+    /* grid-template-columns: repeat(4, 200px); */
+    /* grid-template-columns: 150px repeat(2, 300px) 200px; */
+    /* grid-template-rows: 100px 200px 150px; */
+    grid-template-rows: repeat(3, 150px);
+
+    /* grid-template-columns: 20% 30% 20% 30%; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+
+    /* 행이 몇개가 만들어질지 모르지만 전체적으로 자동 높이를 지정해주고 싶은 경우에 사용 */
+    grid-auto-rows: 100px;
+    /* column-gap: 20px; */
+    /* row-gap: 30px; */
+
+    /* grid-gap은 row가 먼저 나오고 column이 나중에 나옴 */
+    grid-gap: 30px 20px;
+
+}
+
+.item1 {
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+
+    /* grid-column: 1 / 3; */
+    /* grid-row: 1 / 3; */
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 3;
+
+    /* 마지막 컬럼까지 지정 시 -1 */
+    grid-column: 2 /-1;
+
+    /* grid-area : row-start / column-start / row-end / column-end */
+    grid-area: 1 / 2 / 3 / 4;
+}
+
+.grid {
+    border: 1px solid black;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 66% 33%;
+    grid-template-columns: 33% 33% 33%;
+
+}
+
+.grid1,
+.grid5 {
+    background-color: antiquewhite;
+}
+
+.grid2,
+.grid6 {
+    background-color: aqua;
+}
+
+.grid3,
+.grid7 {
+    background-color: blue;
+}
+
+.grid4,
+.grid8 {
+    background-color: brown;
+}
+
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-container {
+    display: grid;
+    grid-auto-rows: 250px;
+    grid-gap: 10px;
+    grid-template-areas:
+        "image1 image1 image1"
+        "image2 image3 image3"
+        "image2 image4 image5"
+        "image6 image6 image7"
+        "image8 image9 image10"
+    ;
+}
+
+.image1 {
+    grid-area: image1;
+}
+
+.image2 {
+    grid-area: image2;
+}
+
+.image3 {
+    grid-area: image3;
+}
+
+.image4 {
+    grid-area: image4;
+}
+
+.image5 {
+    grid-area: image5;
+}
+
+.image6 {
+    grid-area: image6;
+}
+
+.image7 {
+    grid-area: image7;
+}
+
+.image8 {
+    grid-area: image8;
+}
+
+.image9 {
+    grid-area: image9;
+}
+
+.image10 {
+    grid-area: image10;
+}
+
+@media(max-width:1024px) {
+    .img-container {
+        grid-template-areas:
+            "image1 image1"
+            "image2 image3"
+            "image2 image4"
+            "image5 image6"
+            "image7 image6"
+            "image8 image8"
+            "image9 image10"
+        ;
+    }
+}
+
+@media(max-width:768px) {
+    .img-container {
+        grid-template-areas:
+            "image1"
+            "image2"
+            "image3"
+            "image4"
+            "image5"
+            "image6"
+            "image7"
+            "image8"
+            "image9"
+            "image10"
+        ;
+        grid-auto-rows: auto;
+    }
+}
