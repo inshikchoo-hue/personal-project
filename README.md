@@ -1,1 +1,1 @@
-# front-end 수업
+# personal-project
